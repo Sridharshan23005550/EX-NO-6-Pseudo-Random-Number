@@ -1,3 +1,8 @@
+EX-NO-6-Pseudo-Random-Number
+AIM:
+Implementation of Pseudorandom Number Generation Using Standard library
+
+PROGRAM
 # NAME: SRIDHARSHAN D
 # REG NO: 212223040205
 
@@ -24,3 +29,8 @@ int main()
     }
     return 0;
 }
+OUTPUT
+alt text
+
+RESULT
+Thus the Implementation of Pseudorandom Number Generation Using Standard library was executed successfully.

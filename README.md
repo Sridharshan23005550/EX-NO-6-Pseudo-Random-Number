@@ -1,56 +1,62 @@
-EX-NO-6-Pseudo-Random-Number
-AIM:
+# EX-NO-6-Pseudo-Random-Number
+
+# AIM: 
+
 Implementation of Pseudorandom Number Generation Using Standard library
 
-ALGORITHM:
-1.Start the program and import the required libraries.
-2.Seed the random number generator using the current time (i.e) rand(time(0));
-3.Get the number of random numbers to generate.
-4.Pass the value for number of iterations and print the numbers.
-5.End the program.
-PROGRAM:
+# ALGORITHM
+# Step 1:
+Declare the necessary variables for storing the count of random numbers, minimum and maximum values, and the generated random number.
+
+# Step 2:
+Prompt the user for the number of random numbers to be generated (count), and ensure the input is a valid positive integer.
+
+# Step 3:
+Prompt the user to input the minimum (min) and maximum (max) values for the range. Validate that the maximum value is greater than the minimum.
+
+# Step 4:
+Use the srand(time(NULL)) function to seed the random number generator based on the current time.
+
+# Step 5:
+For the specified count, generate random numbers using the formula:
+
+random_number=(rand()%(max−min+1))+min
+
+Print each generated random number.
+# PROGRAM
+```
+NAME: NIKSHITHA G
+REG NO: 212223110031
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-unsigned long seed = 123456789; 
-unsigned long lcg() {
-    const unsigned long a = 1664525; 
-    const unsigned long c = 1013904223; 
-    const unsigned long m = 4294967296; 
-
-    seed = (a * seed + c) % m; 
-    return seed; 
-}
-
-int main()
+int main() 
 {
-    int n; 
-    unsigned long min, max;
-    printf("SRIDHARSHAN D - 212223040205\n"); 
+    int count, min, max;
     printf("Enter the number of random numbers to generate: ");
-    scanf("%d", &n);
+    scanf("%d", &count);
     printf("Enter the minimum value: ");
-    scanf("%lu", &min);
+    
+    scanf("%d", &min);
     printf("Enter the maximum value: ");
-    scanf("%lu", &max);
-
-    if (min >= max) {
-        printf("Error: Minimum value must be less than maximum value.\n");
-        return 1;
+    scanf("%d", &max);
+    srand(time(NULL));
+    printf("Pseudorandom numbers:\n");   
+    for (int i = 0; i < count; i++) 
+    {
+        int random_number = (rand() % (max - min + 1)) + min;
+        printf("%d ", random_number);
     }
-
-    printf("Pseudorandom numbers:\n");
-    
-    for (int i = 0; i < n; i++) {
-        unsigned long random_number = lcg(); 
-        unsigned long scaled_number = min + (random_number % (max - min + 1));
-        printf("%lu\n", scaled_number);
-    }
-    
     return 0;
 }
-OUTPUT:
-![Screenshot (39)](https://github.com/user-attachments/assets/df094922-3963-4f33-9367-0f820f90b082)
+```
+
+# OUTPUT
+![Screenshot (65)](https://github.com/user-attachments/assets/00e82ee2-1bdc-4801-8322-f2925b5524a2)
 
 
-RESULT:
-The Implementation of Pseudorandom Number Generation Using Standard library is successful.
+
+# RESULT
+   Thus the Implementation of Pseudorandom Number Generation Using Standard library was executed successfully.
